@@ -6,7 +6,7 @@ input:focus, button:focus, select:focus { outline: none; } a {text-decoration:no
 span.login {float:right;margin-top:5px;}
 
 .chat {z-index:1;position:fixed;top:100px;left:0px;}
-.content{position:fixed;top:100px; right:0px; width:300px; }
+.content{position:fixed;top:100px; right:0px; width:300px;}
 
 .footer{height:50px;width:100%; background:#aaa; position:fixed; bottom:0px; right:0px;  box-shadow: 0px 0px 5px rgba(0,0,0,1), inset 0px 0px 0px 1px rgba(0,0,0,1);position:fixed;z-index:10;}
 .notification {top:80px;right:0px;width:300px; background:#eefeee; color:#000; z-index:20;}

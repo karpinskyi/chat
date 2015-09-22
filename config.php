@@ -14,7 +14,8 @@ define ('DS', DIRECTORY_SEPARATOR); // разделитель для путей 
 $sitePath = realpath(dirname(__FILE__) . DS) . DS;
 define ('SITE_PATH', $sitePath); // путь к корневой папке сайта
 
-$sitePathBr = 'http://localhost/chat/';
+//$sitePathBr = 'http://localhost/chat/';
+$sitePathBr ='http://'.$_SERVER["HTTP_HOST"].dirname($_SERVER["PHP_SELF"]).'/';
 define ('SITE_PATH_BRAUZER',$sitePathBr); // путь к корневой папке в браузере
 
 define ('TEMPLEATE', 'my'); // папка с шаблоном

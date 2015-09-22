@@ -57,6 +57,7 @@ Abstract Class Controller_Base {
 				$_SESSION['user_name'] = $login->user_name;
 				setcookie("user_session",$login->session, time() + 60*60*24*365, "/");
 				setcookie("user",$_POST['user'], time() + 60*60*24*365, "/");
+				$GLOBALS['funcunsetlogin'] = '1';
 				return;
 			} else {
 				$this->unset_login();
@@ -83,6 +84,7 @@ Abstract Class Controller_Base {
 				$_SESSION['user_name'] = $login_c->user_name;
 				setcookie("user_session",$login_c->session, time() + 60*60*24*365, "/");
 				setcookie("user",$_COOKIE['user'], time() + 60*60*24*365, "/");
+				$GLOBALS['funcunsetlogin'] = '1';
 				return true;
 			} 
 		}
@@ -93,8 +95,7 @@ Abstract Class Controller_Base {
 	
 	public function unset_login() { 
 
-	if (!empty($GLOBALS['funcunsetlogin'])) {return;}
-		$GLOBALS['funcunsetlogin'] = '1';
+
 		
 		$GLOBALS['verefy_post'] = '1';
 	/*	if (!empty($_SESSION['user_session'])) {unset($_SESSION['user_session']);} // и добавлять сюда
@@ -103,8 +104,11 @@ Abstract Class Controller_Base {
 		if (!empty($_SESSION['user_name'])) {unset($_SESSION['user_name']);} */
 		session_unset();
 		
+	if (empty($GLOBALS['funcunsetlogin'])) {
+		$GLOBALS['funcunsetlogin'] = '1';	
 		setcookie("user_session", "", 1, "/");
 		setcookie("user", "", 1, "/");
+		}
 		$GLOBALS['verefy_coocie'] = '1';
 	}
 		

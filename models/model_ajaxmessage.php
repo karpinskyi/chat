@@ -19,7 +19,7 @@ Class Model_Ajaxmessage Extends Model_Base {
 		$this->in = $message;
 		$this->record();
 		
-		echo 'document.location.href ="' . SITE_PATH_BRAUZER . 'chat/channel/' . $this->result['id'] . '";';
+	//	echo 'document.location.href ="' . SITE_PATH_BRAUZER . 'chat/channel/' . $this->result['id'] . '";';
 		
 	}
 	
